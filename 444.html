@@ -3,22 +3,35 @@
     <head>
         <meta charset="utf-8"/>
         <style>
-            body{background:#eeeeee;}
+            body{background:#eeeeee; }
             canvas{background:#ffffff;}
+			 .disc{
+				 width: 200px;
+				 margin: 0 auto;
+			 }
+			 .canv{display: flex;justify-content: center;margin-top:30px;}
+			 button{background-color: coral;border-radius: 6px;box-shadow: 2px 2px 2px;}
         </style>
+		
     </head>
     <body>
-        <!-- 我们要操作的canvas -->
-        <canvas id="gbcanvas" width="800" height="600"></canvas>
+		<div class="disc">
+			<!-- 显示分数的span #score -->
+			<span>your score : </span><span id="score">0</span>
+			<br>
+			<!-- 游戏操作提示 -->
+			<span>操作方法：W A D S</span>
+			<br>
+			<!-- 游戏开始的按钮，点击调用startGame()函数，该函数后面完善 -->
+			<button onclick="startGame();">Start Game</button>
+			<br>
+		</div>
+       <div class="canv">
+		   <!-- 我们要操作的canvas -->
+		   <canvas id="gbcanvas" width="800" height="600"></canvas>
+	   </div>
         <br>
-        <!-- 显示分数的span #score -->
-        <span>your score : </span><span id="score">0</span>
-        <br>
-        <!-- 游戏操作提示 -->
-        <span>操作方法：W A D S</span>
-        <br>
-        <!-- 游戏开始的按钮，点击调用startGame()函数，该函数后面完善 -->
-        <button onclick="startGame();">Start Game</button>
+       
         <script type="text/javascript">
 			var canvas = document.getElementById('gbcanvas'); // 这里通过gbCanvas获取canvas对象
 			var c = canvas.getContext('2d'); //这里通过canvas获取处理API的上下文context
